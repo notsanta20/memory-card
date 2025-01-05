@@ -1,24 +1,23 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import randomArray from "./randomizeArray";
 import Score from "./scores";
 import GetImage from "./getImage";
-
-const selectedImg = new Set();
 
 function GamePage({ bestScore, handleScore, handleGameBtn }) {
   const [arr, setArr] = useState([1, 2, 3, 4, 5]);
   const [currScore, setCurrScore] = useState(0);
   const [cardClass, setCardClass] = useState(`card-container`);
+  const [selected, setSelected] = useState(new Set());
 
   function handleImgClick(e) {
     setCardClass((c) => (c += ` flip`));
     const img = e.target.dataset.key;
-    if (selectedImg.has(img)) {
+    if (selected.has(img)) {
       handleGameBtn();
     }
     setTimeout(() => {
-      if (!selectedImg.has(img)) {
-        selectedImg.add(img);
+      if (!selected.has(img)) {
+        setSelected((s) => s.add(img));
 
         //increase current score
         setCurrScore((s) => s + 1);
