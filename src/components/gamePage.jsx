@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import randomArray from "./randomizeArray";
 import Score from "./scores";
 import GetImage from "./getImage";
@@ -24,9 +24,8 @@ function GamePage({ bestScore, handleScore, handleGameBtn }) {
         setCurrScore((s) => s + 1);
 
         //check and update best score
-        if (currScore > bestScore) {
-          console.log(currScore);
-          handleScore(currScore);
+        if (currScore === bestScore) {
+          handleScore();
         }
 
         //randomize the images

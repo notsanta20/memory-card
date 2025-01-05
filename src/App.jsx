@@ -20,7 +20,7 @@ function App() {
   }
 
   function handleBestScore(curr) {
-    setBestScore(curr);
+    setBestScore((b) => b + 1);
   }
 
   if (page === `start`) {
