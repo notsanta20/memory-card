@@ -4,7 +4,7 @@ import Score from "./scores";
 import GetImage from "./getImage";
 
 function GamePage({ bestScore, handleScore, handleGameBtn }) {
-  const [arr, setArr] = useState([1, 2, 3, 4, 5]);
+  const [arr, setArr] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   const [currScore, setCurrScore] = useState(0);
   const [cardClass, setCardClass] = useState(`card-container`);
   const [selected, setSelected] = useState(new Set());

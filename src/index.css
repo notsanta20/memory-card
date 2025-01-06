@@ -2,21 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Inter";
+  src: url("./src/assets/font/Inter-Variable.ttf");
+}
+
+* {
+  font-family: "Inter";
+  background-color: rgb(48, 48, 77);
+  color: white;
+}
+
 .start-container,
 .end-container {
   width: 100vw;
   height: 100vh;
 }
 
-img {
-  width: 200px;
-  height: auto;
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
 }
 
 .img-container {
   position: relative;
-  width: 250px;
-  height: 250px;
+  max-width: 250px;
+  height: 400px;
 }
 
 .card-container {
@@ -44,4 +55,28 @@ img {
   height: 100%;
   backface-visibility: hidden;
   transform: rotateY(180deg);
+}
+
+.imgs {
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.imgs:hover {
+  transform: scale(105%);
+}
+
+@media (max-width: 1024px) {
+  .game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    grid-template-columns: 1fr;
+  }
 }

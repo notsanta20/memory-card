@@ -1,20 +1,23 @@
 function GetImage({ arr, handleImgClick, cardClass }) {
   return (
     <>
-      <div className="flex justify-evenly">
+      <div className="game-container">
         {arr.map((num) => {
           return (
             <div className="img-container">
               <div className={cardClass}>
                 <div className="card-back">
                   <img
-                    src={`../src/assets/images/${num}.jpg`}
+                    src={`../src/assets/images/${num}.png`}
                     alt=""
                     data-key={num}
                     onClick={handleImgClick}
+                    className="imgs"
                   />
                 </div>
-                <div className="card-front">front</div>
+                <div className="card-front">
+                  <img src="../src/assets/images/back.png" alt="" />
+                </div>
               </div>
             </div>
           );
