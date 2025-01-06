@@ -8,7 +8,7 @@ function GetImage({ arr, handleImgClick, cardClass }) {
               <div className={cardClass}>
                 <div className="card-back">
                   <img
-                    src={`../src/assets/images/${num}.png`}
+                    src={`./images/${num}.png`}
                     alt=""
                     data-key={num}
                     onClick={handleImgClick}
@@ -16,7 +16,7 @@ function GetImage({ arr, handleImgClick, cardClass }) {
                   />
                 </div>
                 <div className="card-front">
-                  <img src="../src/assets/images/back.png" alt="" />
+                  <img src="./images/back.png" alt="" />
                 </div>
               </div>
             </div>
