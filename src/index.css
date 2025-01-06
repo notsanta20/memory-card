@@ -9,8 +9,16 @@
 
 * {
   font-family: "Inter";
-  background-color: rgb(48, 48, 77);
   color: white;
+}
+
+html {
+  background: rgb(62, 67, 111);
+  background: radial-gradient(
+    circle,
+    rgba(62, 67, 111, 1) 0%,
+    rgba(0, 0, 0, 1) 53%
+  );
 }
 
 .start-container,
@@ -21,13 +29,18 @@
 
 .game-container {
   display: grid;
-  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-content: center;
+  gap: 25px;
 }
 
 .img-container {
   position: relative;
   max-width: 250px;
   height: 400px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .card-container {
@@ -66,12 +79,14 @@
   transform: scale(105%);
 }
 
+.curr,
+.best {
+  background-color: rgba(62, 67, 111, 1);
+}
+
 @media (max-width: 1024px) {
   .game-container {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    align-items: center;
   }
 }
 
